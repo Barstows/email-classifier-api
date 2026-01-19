@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 40px auto;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  pre {
+    background: #f4f4f4;
+    padding: 10px;
+    white-space: pre-wrap;
+  }
+  
