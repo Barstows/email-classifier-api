@@ -1,28 +1,27 @@
-// === FORM SUBMISSION ===
-document.getElementById("emailForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+const API_URL = "https://email-classifier-api-backend.onrender.com/process-email";
 
-  const emailText = document.getElementById("emailText").value.trim();
-  const emailFile = document.getElementById("emailFile").files[0];
-  const resultEl = document.getElementById("result");
+async function processEmail() {
+  const text = document.getElementById("emailText").value.trim();
+  const fileInput = document.getElementById("emailFile");
+  const loading = document.getElementById("loading");
+  const resultDiv = document.getElementById("result");
 
-  const API_URL = "https://email-classifier-api-backend.onrender.com/process-email";
-
-  if (!emailText && !emailFile) {
-    alert("Por favor, cole um texto ou envie um arquivo.");
+  if (!text && fileInput.files.length === 0) {
+    alert("Insira um texto ou envie um arquivo.");
     return;
   }
 
-  resultEl.textContent = "Processando...";
+  loading.style.display = "block";
+  resultDiv.style.display = "none";
 
   const formData = new FormData();
 
-  if (emailText) {
-    formData.append("text", emailText);
+  if (text) {
+    formData.append("text", text);
   }
 
-  if (emailFile) {
-    formData.append("file", emailFile);
+  if (fileInput.files.length > 0) {
+    formData.append("file", fileInput.files[0]);
   }
 
   try {
@@ -32,14 +31,23 @@ document.getElementById("emailForm").addEventListener("submit", async (e) => {
     });
 
     if (!response.ok) {
-      throw new Error("Erro na API");
+      throw new Error("Erro HTTP: " + response.status);
     }
 
     const data = await response.json();
-    resultEl.textContent = JSON.stringify(data, null, 2);
 
-  } catch (error) {
-    console.error(error);
-    resultEl.textContent = "Erro ao conectar com a API.";
+    document.getElementById("category").innerText = data.category;
+    document.getElementById("reply").innerText = data.suggested_reply;
+
+    resultDiv.className =
+      "result " + (data.category === "Produtivo" ? "produtivo" : "improdutivo");
+
+    resultDiv.style.display = "block";
+
+  } catch (err) {
+    alert("Erro ao conectar com o backend.");
+    console.error(err);
+  } finally {
+    loading.style.display = "none";
   }
-});
+}
