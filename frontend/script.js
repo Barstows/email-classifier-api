@@ -6,7 +6,7 @@ document.getElementById("emailForm").addEventListener("submit", async (e) => {
   const emailFile = document.getElementById("emailFile").files[0];
   const resultEl = document.getElementById("result");
 
-  const API_URL = "https://email-classifier-api.onrender.com/process-email";
+  const API_URL = "https://email-classifier-api-backend.onrender.com/process-email";
 
   if (!emailText && !emailFile) {
     alert("Por favor, cole um texto ou envie um arquivo.");
