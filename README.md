@@ -22,10 +22,10 @@
 ## 🌐 Demonstração Online
 
 🔗 **Aplicação Frontend:**  
-👉 https://SEU-FRONTEND.onrender.com
+👉 https://email-classifier-ui.onrender.com
 
 🔗 **API Backend (Swagger Docs):**  
-👉 https://SEU-BACKEND.onrender.com/docs
+👉 https://email-classifier-api-backend.onrender.com/docs#/
 
 🎥 **Vídeo Demonstrativo:**  
 👉 [Assistir no YouTube](https://youtube.com/seu-video)
@@ -197,7 +197,7 @@ classificador-emails/
        ▼
 ┌─────────────────┐
 │    Frontend     │
-│ (Exibe resultado)│
+│(Exibe resultado)│
 └─────────────────┘
 ```
 
@@ -353,7 +353,7 @@ Acesse: `http://localhost:8080`
 ### Base URL
 
 ```
-https://SEU-BACKEND.onrender.com
+https://email-classifier-api-backend.onrender.com
 ```
 
 ### Endpoints
@@ -365,14 +365,14 @@ Processa e classifica um email.
 **Request:**
 
 ```bash
-curl -X POST "https://SEU-BACKEND.onrender.com/process-email" \
+curl -X POST "https://email-classifier-api-backend.onrender.com/process-email" \
   -F "text=Olá, gostaria de saber o status da minha solicitação"
 ```
 
 Ou com arquivo:
 
 ```bash
-curl -X POST "https://SEU-BACKEND.onrender.com/process-email" \
+curl -X POST "https://email-classifier-api-backend.onrender.com/process-email" \
   -F "file=@email.txt"
 ```
 
@@ -403,7 +403,7 @@ Verifica status da API.
 
 Acesse a documentação interativa completa em:
 ```
-https://SEU-BACKEND.onrender.com/docs
+https://https://email-classifier-api-backend.onrender.com/docs
 ```
 
 ---
@@ -465,10 +465,6 @@ Maria
 - ⚡ **Rápido** - Feedback instantâneo
 - ♿ **Acessível** - Contraste adequado e semântica HTML
 
-### Capturas de Tela
-
-> *Adicione screenshots da sua aplicação aqui*
-
 ---
 
 ## 🧪 Testes
@@ -526,17 +522,10 @@ Contribuições são bem-vindas! Para contribuir:
 
 **Seu Nome**
 
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [Seu Nome](https://linkedin.com/in/seu-perfil)
-- Email: seu.email@exemplo.com
+- GitHub: [@Barstows](https://github.com/Barstows)
+- LinkedIn: [Arthur Leite Bastos](https://www.linkedin.com/in/arthurlbastos/)
+- Email: arthurleitebastos@gmail.com
 
----
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
 
 ## 🙏 Agradecimentos
 
@@ -546,11 +535,3 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 - [AutoU](https://autou.com.br/) - Pela oportunidade do desafio
 
 ---
-
-<div align="center">
-
-**Desenvolvido com ❤️ para o desafio AutoU**
-
-⭐ Se este projeto foi útil, considere dar uma estrela!
-
-</div>
